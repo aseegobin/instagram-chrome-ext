@@ -1,0 +1,33 @@
+{
+  "name": "Chromestagram",
+  "version": "1.0.0",
+  "description": "Instagram feed in Google Chrome",
+  "main": "index.js",
+  "scripts": {
+    "watch": "watchify -t babelify js/index.js -o dist/popup.js --debug --verbose",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "stylus": "gulp compile-stylus"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aseegobin/instagram-chrome-ext.git"
+  },
+  "author": "Avie Seegobin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aseegobin/instagram-chrome-ext/issues"
+  },
+  "homepage": "https://github.com/aseegobin/instagram-chrome-ext",
+  "dependencies": {
+    "babelify": "^6.3.0",
+    "browserify": "^11.1.0",
+    "gulp": "^3.9.0",
+    "jquery": "^2.1.4",
+    "react": "^0.13.3",
+    "stylus": "^0.52.4",
+    "watchify": "^3.4.0"
+  },
+  "devDependencies": {
+    "gulp-stylus": "^2.0.6"
+  }
+}
