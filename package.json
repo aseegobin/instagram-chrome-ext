@@ -7,7 +7,10 @@
     "watch": "watchify -t babelify js/index.js -o dist/popup.js --debug --verbose",
     "test": "echo \"Error: no test specified\" && exit 1",
     "stylus": "gulp compile-stylus",
-    "bundle-extension": "gulp compile-ext"
+    "bundle-extension": "gulp compile-ext",
+    "watch-stylus": "gulp watch-stylus",
+    "watch-js": "gulp watch-js",
+    "watch": "gulp watch-all"
   },
   "repository": {
     "type": "git",
@@ -29,6 +32,7 @@
     "watchify": "^3.4.0"
   },
   "devDependencies": {
-    "gulp-stylus": "^2.0.6"
+    "gulp-stylus": "^2.0.6",
+    "gulp-watch": "^4.3.5"
   }
 }

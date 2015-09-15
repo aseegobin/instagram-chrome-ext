@@ -4,7 +4,7 @@ html {
   height: 100%;
 }
 #chromestagram_container {
-  width: 400px;
+  width: 500px;
   height: 500px;
   position: relative;
   overflow: hidden;
@@ -13,4 +13,7 @@ html {
   padding: 0;
   -webkit-font-smoothing: antialiased;
   font-family: "Avenir Next", Helvetica, Arial, sans-serif;
+}
+#top-bar {
+  height: 100%;
 }
