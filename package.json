@@ -6,7 +6,8 @@
   "scripts": {
     "watch": "watchify -t babelify js/index.js -o dist/popup.js --debug --verbose",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "stylus": "gulp compile-stylus"
+    "stylus": "gulp compile-stylus",
+    "bundle-extension": "gulp compile-ext"
   },
   "repository": {
     "type": "git",
