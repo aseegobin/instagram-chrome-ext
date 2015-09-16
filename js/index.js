@@ -1,4 +1,6 @@
-var btn = document.createElement("BUTTON");
-var t = document.createTextNode("CLICK ME");
-btn.appendChild(t);
-document.body.appendChild(btn);
+var React   = require('react');
+var Content = require('./components/content');
+
+React.render(
+    <Content />, document.getElementById('chromestagram_container')
+);
