@@ -6,7 +6,7 @@ var Grid = require('./grid');
 var Content = React.createClass({
     getInitialState: function() {
         return {
-            loggedIn: true
+            loggedIn: false
         }
     },
 

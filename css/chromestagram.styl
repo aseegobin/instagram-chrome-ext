@@ -1,3 +1,6 @@
+instagramBlue = #125688
+hoverBlue     = #74b8ea
+
 body, html
     margin 0
     height 100%
@@ -12,5 +15,56 @@ body, html
     padding 0
     -webkit-font-smoothing antialiased
     font-family "Avenir Next", Helvetica, Arial, sans-serif
+    
+    .container
+        height 100%
+        width 100%
+        text-align center
+        background-color instagramBlue
+        color white
+        
+        .gram-login
+            color black
+            width 200px
+            height 105px
+            margin-top -20px
+            margin-left -100px
+            top 50%
+            left 50%
+            position absolute
+            
+            input
+                width 100%
+                display block
+                background white
+                border none
+                outline none
+                -webkit-box-sizing border-box
+                -moz-box-sizing border-box
+                box-sizing border-box
+                padding 16px 0
+                font-family "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif
+                font-size 14px
+                text-indent 10px
+                border-bottom 1px solid #e0e0e0
+            
+            input[type="password"]
+                border-bottom 0
+                
+            .login-button
+                width 100%
+                background-color white
+                color instagramBlue
+                height 30px
+                font-size 26px
+                padding 16px 0
+                font-weight 600
+                margin-top 3px
+                
+                &:hover
+                    background-color hoverBlue
+                    transition 1s linear
+                    color white
+                
 
 @import 'test.styl'
