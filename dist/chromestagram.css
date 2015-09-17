@@ -4,8 +4,8 @@ html {
   height: 100%;
 }
 #chromestagram_container {
-  width: 500px;
-  height: 500px;
+  width: 100%;
+  height: 100%;
   position: relative;
   background: #fff;
   margin: 0;
@@ -14,8 +14,8 @@ html {
   font-family: "Avenir Next", Helvetica, Arial, sans-serif;
 }
 #chromestagram_container .container {
-  height: 100%;
-  width: 100%;
+  height: 500px;
+  width: 500px;
   text-align: center;
   background-color: #125688;
   color: #fff;
@@ -49,6 +49,16 @@ html {
   transition: 1s linear;
   color: #fff;
   cursor: pointer;
+}
+#chromestagram_container .container .gram-grid {
+  background-color: #fff;
+  overflow: auto;
+  height: 500px;
+}
+#chromestagram_container .container .gram-grid .instagram-img {
+  margin-bottom: 5px;
+  height: 300px;
+  width: 300px;
 }
 #top-bar {
   height: 100%;

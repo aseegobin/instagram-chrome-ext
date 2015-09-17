@@ -39,9 +39,7 @@ function buildFeed(token) {
                 _imageLinks = _imageObjs.map(function(obj) {
                     return (obj.images.low_resolution.url);
                 })
-
-                console.log(_imageLinks, 'media serv');
-
+                
                 resolve(_imageLinks);
             });
     })

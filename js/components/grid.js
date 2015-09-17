@@ -12,7 +12,6 @@ var Grid = React.createClass({
     getMedia: function(token) {
         MediaService.buildFeed(token)
             .then((links) => {
-                console.log(links, 'grid');
                 this.setState({feed: links});
             });
     },
@@ -20,12 +19,11 @@ var Grid = React.createClass({
     handleMedia: function() {
         if (!this.state) {
             this.getMedia(this.props.accessToken);
-            return (<p>waste</p>);
+            return (<p></p>);
         } else {
             var images = this.state.feed.map(function(imageLink) {
-                console.log(imageLink);
                 return (
-                    <img src={imageLink} />
+                    <img className='instagram-img' src={imageLink} />
                 );
             })
             return images;
@@ -36,7 +34,6 @@ var Grid = React.createClass({
         return (
             <div>
                 <div className='gram-grid'>
-                    GRID
                     {this.handleMedia()}
                 </div>
             </div>
