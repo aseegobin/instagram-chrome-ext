@@ -1,9 +1,6 @@
 var React = require('react');
 
 var Login = React.createClass({
-    username: null,
-    password: null,
-
     render: function() {
         return (
             <div>
@@ -12,9 +9,7 @@ var Login = React.createClass({
                 </div>
 
                 <div className='gram-login'>
-                    <input type="name" placeholder="Username" onChange={this.handleName}/>
-                    <input type="password" placeholder="Password" onChange={this.handlePassword}/>
-                    
+                    You must first log in to view your feed
                     <div className='login-button' onClick={this.handleLogIn}>
                         Login
                     </div>
@@ -23,16 +18,7 @@ var Login = React.createClass({
         );
     },
     
-    handleName: function(event) {
-        this.username = event.target.value;
-    },
-
-    handlePassword: function(event) {
-        this.password = event.target.value;
-    },
-
     handleLogIn: function() {
-        console.log(this.username, this.password);
     },
 
 });

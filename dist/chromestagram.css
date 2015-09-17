@@ -22,7 +22,7 @@ html {
   color: #fff;
 }
 #chromestagram_container .container .gram-login {
-  color: #000;
+  color: #fff;
   width: 200px;
   height: 105px;
   margin-top: -20px;
@@ -30,24 +30,8 @@ html {
   top: 50%;
   left: 50%;
   position: absolute;
-}
-#chromestagram_container .container .gram-login input {
-  width: 100%;
-  display: block;
-  background: #fff;
-  border: none;
-  outline: none;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 16px 0;
   font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  text-indent: 10px;
-  border-bottom: 1px solid #e0e0e0;
-}
-#chromestagram_container .container .gram-login input[type="password"] {
-  border-bottom: 0;
+  font-size: 18px;
 }
 #chromestagram_container .container .gram-login .login-button {
   width: 100%;
@@ -55,9 +39,11 @@ html {
   color: #125688;
   height: 30px;
   font-size: 26px;
-  padding: 16px 0;
+  padding: 15px 0;
+  line-height: 30px;
   font-weight: 600;
-  margin-top: 3px;
+  border-radius: 5px;
+  margin-top: 7px;
 }
 #chromestagram_container .container .gram-login .login-button:hover {
   background-color: #74b8ea;
