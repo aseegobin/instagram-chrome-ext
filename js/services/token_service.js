@@ -1,15 +1,21 @@
 var React = require('react');
 
-var authenicateURL = 'https://instagram.com/oauth/authorize/?client_id=55c4e90c0b3a41fab5b5c18c961ba3a5&redirect_uri=https://depcohpcikenbahfbjcppghabjkamohf.chromiumapp.org&response_type=token';
+var Constants = require('../constants/constants');
+var UserStore = require('../stores/user_store');
+
+var ChromestagramActions = require('../actions/chromestagram_actions');
+
+var authenicateURL = Constants.AUTHENTICATION_URL;
 
 function handleToken(url) {
     var token = url.split('=')[1];
-    console.log(token);
-    //add flux to fuck with content
+    
+    if (token) {
+        ChromestagramActions.handleLogin(true);
+    }
 }
 
 function login() {
-    
     var options = {
         url: authenicateURL,
         interactive: true
