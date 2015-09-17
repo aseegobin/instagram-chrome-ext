@@ -14,7 +14,8 @@
   },
 
   "permissions": [
-    "identity"
+    "identity",
+    "*://api.instagram.com/*"
   ],
 
   "oauth2": {
