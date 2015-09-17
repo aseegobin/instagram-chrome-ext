@@ -1,5 +1,7 @@
 var React = require('react');
 
+var TokenService = require('../services/token_service');
+
 var Login = React.createClass({
     render: function() {
         return (
@@ -19,6 +21,7 @@ var Login = React.createClass({
     },
     
     handleLogIn: function() {
+        TokenService.login();
     },
 
 });
