@@ -11,7 +11,7 @@ function handleToken(url) {
     var token = url.split('=')[1];
     
     if (token) {
-        ChromestagramActions.handleLogin(true);
+        ChromestagramActions.handleLogin(token);
     }
 }
 

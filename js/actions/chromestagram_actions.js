@@ -2,10 +2,10 @@ var ChromestagramDispatcher = require('../dispatcher/chromestagram_dispatcher');
 var Constants = require('../constants/constants');
 
 var ChromestagramActions = {
-  handleLogin: function(flag) {
+  handleLogin: function(token) {
     ChromestagramDispatcher.dispatch({
       actionType: Constants.LOGIN_ACTION,
-      flag: flag
+      token: token
     });
   },
 

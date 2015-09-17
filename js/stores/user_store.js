@@ -7,8 +7,8 @@ var ChromestagramDispatcher = require('../dispatcher/chromestagram_dispatcher');
 
 
 var UserStore = assign({}, EventEmitter.prototype, {
-  emitChange: function(flag) {
-    this.emit(Constants.LOGIN_EVENT, flag);
+  emitChange: function(token) {
+    this.emit(Constants.LOGIN_EVENT, token);
   },
 
   addChangeListener: function(callback) {
@@ -26,7 +26,7 @@ ChromestagramDispatcher.register(function(action) {
 
     switch(action.actionType) {
         case Constants.LOGIN_ACTION:
-            UserStore.emitChange(action.flag);
+            UserStore.emitChange(action.token);
         break;
     }
 });

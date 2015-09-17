@@ -8,7 +8,7 @@ var UserStore = require('../stores/user_store');
 var Content = React.createClass({
     getInitialState: function() {
         return {
-            loggedIn: false
+            token: null
         }
     },
 
@@ -23,8 +23,8 @@ var Content = React.createClass({
     render: function() {
         var content = <Login />;
 
-        if (this.state.loggedIn) {
-            content = <Grid />;
+        if (this.state.token) {
+            content = <Grid accessToken={this.state.token} />;
         };
         
         return (
@@ -34,8 +34,8 @@ var Content = React.createClass({
         );
     },
 
-    _onChange: function(flag) {
-        this.setState({ loggedIn: flag });
+    _onChange: function(token) {
+        this.setState({ token: token });
     }
 });
 
