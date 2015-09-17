@@ -10,8 +10,26 @@ var Grid = React.createClass({
     },
 
     getMedia: function(token) {
-        var newsFeed = MediaService.getFeed(token);
-        this.setState({ feed: newsFeed });
+        MediaService.buildFeed(token)
+            .then((links) => {
+                console.log(links, 'grid');
+                this.setState({feed: links});
+            });
+    },
+
+    handleMedia: function() {
+        if (!this.state) {
+            this.getMedia(this.props.accessToken);
+            return (<p>waste</p>);
+        } else {
+            var images = this.state.feed.map(function(imageLink) {
+                console.log(imageLink);
+                return (
+                    <img src={imageLink} />
+                );
+            })
+            return images;
+        }
     },
 
     render: function() {
@@ -19,7 +37,7 @@ var Grid = React.createClass({
             <div>
                 <div className='gram-grid'>
                     GRID
-                    {this.getMedia(this.props.accessToken)}
+                    {this.handleMedia()}
                 </div>
             </div>
         );

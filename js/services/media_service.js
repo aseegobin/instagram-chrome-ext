@@ -1,54 +1,53 @@
 var jQuery = require('jQuery');
 
+var _imageObjs = [];
+var _imageLinks = [];
+
 function getFeed(token) {
-    var url = "https://api.instagram.com/v1/media/popular";
+    // var url = "https://api.instagram.com/v1/media/popular";
+    var url = "https://api.instagram.com/v1/users/self/feed";
     
-    // var url = "https://api.instagram.com/v1/tags/toronto?access_token="+token;
-    
-    // var url = "https://api.instagram.com/v1/tags/coffee/media/recent";
-    // url += "?access_token=" + token;
-    // url += "&callback=" + jsonpCallback + ";";
-    
-    //return array of images
-    jQuery.ajax({
-        type: "GET",
-        url: url,
-        contentType: 'application/json; charset=utf-8',
-        data: {
-            access_token: token
-        },
+    return new Promise((resolve,reject) => {
+        jQuery.ajax({
+            type: "GET",
+            url: url,
+            contentType: 'application/json; charset=utf-8',
+            data: {
+                access_token: token
+            },
 
-        // dataType: "jsonp",
-        // cache: false,
-        // callback: 'jsonpCallback',
+            success: function(results) {
+                // _rawFeed = results;
+                resolve(results);
+            },
 
-        success: function(results) {
-            console.log(results)
-        },
+            error: function(error) {
+                console.error(error);
+            }
+        });
+    })
+}
 
-        error: function(error) {
-            console.error(error);
-        }
-    });
+function buildFeed(token) {
+    return new Promise((resolve, reject) => {
+        this.getFeed(token)
+            .then((feed) => {
+                _imageObjs = feed.data.filter(function(obj) {
+                    return (obj.type === "image");
+                });
+                
+                _imageLinks = _imageObjs.map(function(obj) {
+                    return (obj.images.low_resolution.url);
+                })
 
-    // function jsonpCallback() {
-    //     console.log('callback');
-    // };
+                console.log(_imageLinks, 'media serv');
 
-    // jQuery.getJSON(url, function(data) {
-    //     console.log(data);
-    // });
-    
-    // jQuery.ajax({
-    //     type: "GET",
-    //     dataType: "jsonp",
-    //     url: url, 
-    //     success: function(data) {
-    //         console.log(data);
-    //     }
-    // });
+                resolve(_imageLinks);
+            });
+    })
 }
 
 module.exports = {
-    getFeed: getFeed
+    getFeed: getFeed,
+    buildFeed: buildFeed
 }
