@@ -49,7 +49,7 @@ function runBundle() {
         .transform(babelify)
         .bundle()
         .on("error", function (err) { console.log("Error : " + err.message); })
-        .pipe(fs.createWriteStream("./dist/popup.js"));
+        .pipe(fs.createWriteStream("./dist/chromestagram.js"));
 
     console.log('complied js');
 };

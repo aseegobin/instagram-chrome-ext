@@ -63,6 +63,7 @@ html {
   background-color: #74b8ea;
   transition: 1s linear;
   color: #fff;
+  cursor: pointer;
 }
 #top-bar {
   height: 100%;
