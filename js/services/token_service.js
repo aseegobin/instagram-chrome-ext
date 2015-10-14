@@ -21,15 +21,16 @@ function login() {
         interactive: true
     };
 
-    // chrome.identity.getAuthToken({ 'interactive': false, 'scopes': ["*://*.instagram.com/*"] }, function(token) {
-    //     if (token) {
-    //         window.alert(token);
-    //     }
-    // });
+    chrome.identity.launchWebAuthFlow(options, handleToken);
+    
+    chrome.identity.getAuthToken({ 'interactive': false }, function(token) {
+        if (token) {
+            window.alert(token);
+        }
+    });
 
     //TODO: find way to get token without launching flow every time
     // maybe just put in storage?
-    chrome.identity.launchWebAuthFlow(options, handleToken);
 }
 
 module.exports = {

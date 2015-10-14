@@ -19,9 +19,9 @@
   ],
 
   "oauth2": {
-    "client_id": "55c4e90c0b3a41fab5b5c18c961ba3a5",
+    "client_id": "213162873781-2g0sqjnkrdhfc8nilicqbc5vrrlte6k7.apps.googleusercontent.com",
     "scopes": [
-      "*://*.instagram.com/*"
+      "https://www.googleapis.com/auth/drive"
     ]
   }
 }

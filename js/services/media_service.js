@@ -1,7 +1,7 @@
 var jQuery = require('jQuery');
 
 var _imageObjs = [];
-var _imageLinks = [];
+var _postObjs  = [];
 
 function getFeed(token) {
     // var url = "https://api.instagram.com/v1/media/popular";
@@ -32,15 +32,22 @@ function buildFeed(token) {
     return new Promise((resolve, reject) => {
         this.getFeed(token)
             .then((feed) => {
+                //only return images
+                // TODO: handle videos
                 _imageObjs = feed.data.filter(function(obj) {
                     return (obj.type === "image");
                 });
                 
-                _imageLinks = _imageObjs.map(function(obj) {
-                    return (obj.images.low_resolution.url);
+                _postObjs = _imageObjs.map(function(obj) {
+                    var postObj = {};
+                    postObj.link = obj.images.low_resolution.url;
+                    postObj.userName = obj.user.username;
+                    postObj.profilePic = obj.user.profile_picture;
+
+                    return postObj;
                 })
                 
-                resolve(_imageLinks);
+                resolve(_postObjs);
             });
     })
 }

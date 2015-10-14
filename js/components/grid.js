@@ -2,6 +2,8 @@ var React = require('react');
 
 var MediaService = require('../services/media_service');
 
+var IGPost = require('./post');
+
 var Grid = React.createClass({
     getInitalState: function() {
         return {
@@ -11,8 +13,8 @@ var Grid = React.createClass({
 
     getMedia: function(token) {
         MediaService.buildFeed(token)
-            .then((links) => {
-                this.setState({feed: links});
+            .then((posts) => {
+                this.setState({feed: posts});
             });
     },
 
@@ -21,9 +23,9 @@ var Grid = React.createClass({
             this.getMedia(this.props.accessToken);
             return (<p></p>);
         } else {
-            var images = this.state.feed.map(function(imageLink) {
+            var images = this.state.feed.map(function(imageObj) {
                 return (
-                    <img className='instagram-img' src={imageLink} />
+                    <IGPost postObj={imageObj} />
                 );
             })
             return images;
@@ -31,10 +33,12 @@ var Grid = React.createClass({
     },
 
     render: function() {
+        var feed = this.handleMedia();
+
         return (
             <div>
                 <div className='gram-grid'>
-                    {this.handleMedia()}
+                    {feed}
                 </div>
             </div>
         );

@@ -55,10 +55,29 @@ html {
   overflow: auto;
   height: 500px;
 }
-#chromestagram_container .container .gram-grid .instagram-img {
-  margin-bottom: 5px;
+#chromestagram_container .container .gram-grid .ig-post {
+  color: #125688;
+  border-bottom: 3px solid #e0e0e0;
+  position: relative;
+}
+#chromestagram_container .container .gram-grid .ig-post .user-info {
+  float: left;
+  position: absolute;
+  top: 40%;
+  left: 5%;
+}
+#chromestagram_container .container .gram-grid .ig-post .user-info .user-pic {
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+}
+#chromestagram_container .container .gram-grid .ig-post .user-info .user-name {
+  font-size: 14px;
+}
+#chromestagram_container .container .gram-grid .ig-post .instagram-img {
   height: 300px;
   width: 300px;
+  margin-left: 70px;
 }
 #top-bar {
   height: 100%;

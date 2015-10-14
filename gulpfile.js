@@ -25,6 +25,7 @@ gulp.task('compile-stylus', ['stylus']);
 gulp.task('compile-ext', ['bundler','stylus']);
 
 gulp.task('watch-stylus', function () {
+    runStylus();
     watch('./css/**/*.styl', function () {
         runStylus();
     });
@@ -39,6 +40,7 @@ function runStylus() {
 };
 
 gulp.task('watch-js', function () {
+    runBundle();
     watch('./js/**/*.js', function () {
         runBundle();
     });
